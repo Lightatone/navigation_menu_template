@@ -1,38 +1,105 @@
 .App {
   text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bodyarea {
+  text-align: center;
+  background: url('./mountain.jpg') no-repeat center center; 
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header{
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-around;
+  background-color: rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+  height: 80px;
+}
+.Logo{
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.Nav-area a{
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 8px 16px;
+  transition: 300ms;
+  border-radius: 99px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Nav-area a:hover{
+  background-color:rgba(0,0,0,0.2);
+}
+.Nav-area .Logo{
+  display: none;
+}
+.user-group a{
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px
+}
+.user-signup{
+  border: rgba(255,255,255,0.5) 2px solid;
+  padding: 9px 16px;
+  margin-left: 16px;
+  border-radius: 99px;
+}
+.user-signup:hover{
+  background: white;
+  color: black;
+}
+.mobile-menu{
+  display: none;
+}
+@media (max-width: 768px) {
+  .Nav-area {
+    text-align: left;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    background: #0f172a;
+    height: 100vh;
+    width: 50%;
+    padding: 0px 16px;
+    gap: 16px;
+    transition: left 0.3s ease;
   }
-  to {
-    transform: rotate(360deg);
+  .Nav-area.open {
+    left: 0;
+  }
+  .Nav-area .Logo {
+    margin-left: 16px;
+    margin-top: 20px;
+    display: block;
+  }
+  .Nav-area .divider {
+    background-color: rgba(255,255,255,0.5);
+    width: 100%;
+    height: 2px;
+    margin: 16px 16px;
+  }
+  .user-group {
+    display: flex;
+    align-items: center;
+  }
+  .mobile-menu {
+    margin-left: 5px;
+    font-size: 45px;
+    color: white;
+    cursor: pointer;
+    display: block;
+  }
+  .user-signup {
+    font-size: 40px;
+    color: white;
   }
 }
